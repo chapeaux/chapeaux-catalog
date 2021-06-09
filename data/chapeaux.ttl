@@ -43,6 +43,10 @@ cpx:pfeAccordion rdf:type cpxs:WebComponent ;
     cpxs:assetDescription "Patternfly Elements Accordion" ;
     cpxs:sizeInBytes 8100 .
 
+cpx:pfeAvatar rdf:type cpxs:WebComponent ;
+    cpxs:assetDescription "Patternfly Elements Avatar" ;
+    cpxs:sizeInBytes 4100 .
+
 cpx:AccessRHDC rdf:type cpxs:Organization ;
     cpxs:owns <https://access.redhat.com/security/cve/cve-2021-3504> .
 
@@ -52,8 +56,8 @@ cpx:DevelopersRHDC rdf:type cpxs:Organization .
 
 cpx:RHDC rdf:type cpxs:Organization .
 
-<https://catalog.redhat.com/software/operators/detail/5e98726ac87154c17fb36531> a schema:WebPage ;
-    cpxs:hosts cpx:pfeAccordion .
+<https://catalog.redhat.com/software/operators/detail/5e98726ac87154c17fb36531> rdf:type schema:WebPage ;
+    cpxs:contains cpx:pfeAccordion .
 
-<https://access.redhat.com/security/cve/cve-2021-3504> a schema:WebPage ;
-    cpxs:hosts cpx:pfeAccordion .
+<https://access.redhat.com/security/cve/cve-2021-3504> rdf:type schema:WebPage ;
+    cpxs:contains cpx:pfeAccordion .
