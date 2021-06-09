@@ -9,6 +9,12 @@
 xsd:integer rdf:type rdfs:Datatype .
 
 cpxs:Host rdf:type rdfs:Class .
+
+<https://redhat.com/> a cpxs:Host ;
+    cpxs:hosts <https://access.redhat.com/> ;
+    cpxs:hosts <https://catalog.redhat.com/> ;
+    cpxs:hosts <https://developers.redhat.com/> .
+
 cpxs:Namespace rdf:type rdfs:Class .
 cpxs:Organization rdf:type rdfs:Class .
 cpxs:Module rdf:type rdfs:Class .
