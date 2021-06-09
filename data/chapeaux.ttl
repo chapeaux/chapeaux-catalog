@@ -11,7 +11,7 @@ xsd:integer rdf:type rdfs:Datatype .
 cpxs:Host rdf:type rdfs:Class .
 
 cpxs:hosts rdf:type rdf:Property ;
-    rdfs:domain cpx:Host ;
+    rdfs:domain cpx:Host .
 
 <https://redhat.com/> rdf:type cpxs:Host ;
     cpxs:hosts <https://access.redhat.com/> ;
