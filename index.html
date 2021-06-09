@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>    
+        <meta charset="UTF-8">    
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+        <title>Document</title>
+        <style>
+        #cy {
+            width: 300px;
+            height:300px;
+            display: block;
+        }
+        </style>
+    </head>
+    <body>      
+        <div id="cy"></div>  
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.18.2/cytoscape.min.js" integrity="sha512-CBGCXtszkG5rYlQSTNUzk54/731Kz28WPk2uT1GCPCqgfVRJ2v514vzzf16HuGX9WVtE7JLqRuAERNAzFZ9Hpw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>        
+            let data = {"head":{"vars": ["obj","pred","sub"]}, "results": {"bindings": [{"obj": {"type": "uri", "value": "http://chapeaux.io/schemas/Asset"        },        "pred": {          "type": "uri",          "value": "http://www.w3.org/2000/01/rdf-schema#subClassOf"        },        "sub": {          "type": "uri",          "value": "http://chapeaux.io/schemas/Script"        }      },      {        "obj": {          "type": "uri",          "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"        },        "pred": {          "type": "uri",          "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"        },        "sub": {          "type": "uri",          "value": "http://chapeaux.io/schemas/assetDescription"        }      },      {        "obj": {          "type": "uri",          "value": "https://schema.org/Text"        },        "pred": {          "type": "uri",          "value": "http://www.w3.org/2000/01/rdf-schema#range"        },        "sub": {          "type": "uri",          "value": "http://chapeaux.io/schemas/assetDescription"        }      },      {        "obj": {          "type": "uri",          "value": "http://chapeaux.io/vocabulary/Asset"        },        "pred": {          "type": "uri",          "value": "http://www.w3.org/2000/01/rdf-schema#domain"        },        "sub": {          "type": "uri",          "value": "http://chapeaux.io/schemas/assetDescription"        }      },      {        "obj": {          "type": "uri",          "value": "http://www.w3.org/2000/01/rdf-schema#Class"        },        "pred": {          "type": "uri",          "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"        },        "sub": {          "type": "uri",          "value": "http://chapeaux.io/schemas/Module"        }      },      {        "obj": {          "type": "uri",          "value": "https://schema.org/SoftwareSourceCode"        },        "pred": {          "type": "uri",          "value": "http://www.w3.org/2000/01/rdf-schema#subClassOf"        },        "sub": {          "type": "uri",          "value": "http://chapeaux.io/schemas/WebComponent"        }      },      {        "obj": {          "type": "uri",          "value": "http://chapeaux.io/schemas/Asset"        },        "pred": {          "type": "uri",          "value": "http://www.w3.org/2000/01/rdf-schema#subClassOf"        },        "sub": {          "type": "uri",          "value": "http://chapeaux.io/schemas/WebComponent"        }      },      {        "obj": {          "type": "uri",          "value": "http://chapeaux.io/schemas/Asset"        },        "pred": {          "type": "uri",          "value": "http://www.w3.org/2000/01/rdf-schema#subClassOf"        },        "sub": {          "type": "uri",          "value": "http://chapeaux.io/schemas/Image"        }      },      {        "obj": {          "type": "uri",          "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"        },        "pred": {          "type": "uri",          "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"        },        "sub": {          "type": "uri",          "value": "http://chapeaux.io/schemas/sizeInBytes"        }      },      {        "obj": {          "type": "uri","value": "http://www.w3.org/2001/XMLSchema#integer"},"pred": {"type": "uri","value": "http://www.w3.org/2000/01/rdf-schema#range"},"sub": {"type": "uri","value": "http://chapeaux.io/schemas/sizeInBytes"}}]}};
+            let nodes = data.results.bindings.map(n => {data: {id: n.obj.value}});
+            let links = data.results.bindings.map(lnk => Object.create())
+            let cy = cytoscape({
+                container: document.getElementById('cy'),
+                elements: nodes
+            })
+            //         fetch('http://localhost:8080/query', {//             headers: { //                 'Content-Type':'application/sparql-query',//                 'Accept':'application/sparql-results+json'//             },//             mode: 'no-cors',//             body:`PREFIX cpx: <http://chapeaux.io/vocabulary/>// PREFIX cpxs: <http://chapeaux.io/schemas/>// SELECT * WHERE {// ?component a cpxs:WebComponent .// ?page cpxs:hosts ?component .// } LIMIT 10`,//             method:'POST'//         }).then(resp=>resp.json())//         .then(data=>console.log(data));    
+        </script>
+    </body>
+</html>
