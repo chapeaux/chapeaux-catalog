@@ -14,6 +14,14 @@ cpxs:Organization rdf:type rdfs:Class .
 cpxs:Module rdf:type rdfs:Class .
 cpxs:Asset rdf:type rdfs:Class .
 
+cpxs:sizeInBytes rdf:type rdf:Property;
+    rdfs:domain cpx:Asset ;
+    rdfs:range  xsd:integer .
+
+cpxs:assetDescription rdf:type rdf:Property ;
+    rdfs:domain cpx:Asset ;
+    rdfs:range schema:Text .
+
 cpxs:Stylesheet rdfs:subClassOf cpxs:Asset ;
     rdfs:subClassOf schema:SoftwareSourceCode .
 cpxs:Script rdfs:subClassOf cpxs:Asset ;
@@ -22,15 +30,7 @@ cpxs:Image rdfs:subClassOf cpxs:Asset .
 cpxs:WebComponent rdfs:subClassOf cpxs:Asset ;
     rdfs:subClassOf schema:SoftwareSourceCode .
 
-cpxs:sizeInBytes rdf:type rdf:Property;
-    rdfs:domain cpx:Asset;
-    rdfs:range  xsd:integer .
-
-cpxs:assetDescription rdf:type rdf:Property ;
-    rdfs:domain cpx:Asset ;
-    rdfs:range schema:Text .
-
-cpx:pfeAccordion a cpxs:WebComponent ;
+cpx:pfeAccordion rdf:type cpxs:WebComponent ;
     cpxs:assetDescription "Patternfly Elements Accordion" ;
     cpxs:sizeInBytes 8100 .
 
