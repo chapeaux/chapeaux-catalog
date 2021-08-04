@@ -22,7 +22,12 @@
             let links = data.results.bindings.map(lnk => Object.create())
             let cy = cytoscape({
                 container: document.getElementById('cy'),
-                elements: nodes
+                elements: nodes,
+                style: [
+                    {
+                        selector: 'node',
+                style}
+                ]
             })
             //         fetch('http://localhost:8080/query', {//             headers: { //                 'Content-Type':'application/sparql-query',//                 'Accept':'application/sparql-results+json'//             },//             mode: 'no-cors',//             body:`PREFIX cpx: <http://chapeaux.io/vocabulary/>// PREFIX cpxs: <http://chapeaux.io/schemas/>// SELECT * WHERE {// ?component a cpxs:WebComponent .// ?page cpxs:hosts ?component .// } LIMIT 10`,//             method:'POST'//         }).then(resp=>resp.json())//         .then(data=>console.log(data));    
         </script>
