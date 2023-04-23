@@ -86,3 +86,34 @@ const results = await fetch('http://oxigraph-ldary24-dev.apps.sandbox.x8i5.p1.op
 // console.log('Text',txt);
 // const jsonresp = await results.json();
 // console.log(jsonresp);
+
+/*
+
+
+import {parse} from "https://deno.land/std/flags/mod.ts";
+
+function main(args: string[]) {
+    const {
+        url,
+        graph,
+        ttl,
+        help,
+    } = parse(args);
+    if (ttl) {
+        if (url) { //http://oxigraph-ldary24-dev.apps.sandbox.x8i5.p1.openshiftapps.com
+            fetch(`${url}/store?graph=${graph}`,{
+                headers: {
+                    'Content-Type':'text/turtle'
+                }
+            });
+        } else {
+            console.log('Please provide a URL (-url)')
+        }
+    } else {
+        console.log('No site entered');
+    }
+}
+
+main(Deno.args);
+
+*/

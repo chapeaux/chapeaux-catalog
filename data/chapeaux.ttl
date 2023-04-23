@@ -57,7 +57,8 @@ cpx:DevelopersRHDC rdf:type cpxs:Organization .
 cpx:RHDC rdf:type cpxs:Organization .
 
 <https://catalog.redhat.com/software/operators/detail/5e98726ac87154c17fb36531> rdf:type schema:WebPage ;
-    cpxs:contains cpx:pfeAccordion .
+    cpxs:contains cpx:pfeAccordion ;
+    cpxs:contains cpx:pfeAvatar .
 
 <https://access.redhat.com/security/cve/cve-2021-3504> rdf:type schema:WebPage ;
     cpxs:contains cpx:pfeAccordion .
