@@ -1,0 +1,62 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix cpx: <http://chapeaux.io/schemas/> .
+
+xsd:integer a rdfs:Datatype .
+<http://chapeaux.io/schemas/Host> a rdfs:Class .
+<http://chapeaux.io/schemas/hosts>
+  a rdf:Property ;
+  rdfs:domain <http://chapeaux.io/vocabulary/Host> .
+
+<https://redhat.com/>
+  a <http://chapeaux.io/schemas/Host> ;
+  cpx:hosts <https://access.redhat.com/>, <https://catalog.redhat.com/>, <https://developers.redhat.com/> .
+
+cpx:Namespace a rdfs:Class .
+cpx:Organization a rdfs:Class .
+cpx:Module a rdfs:Class .
+cpx:Asset a rdfs:Class .
+cpx:sizeInBytes
+  a rdf:Property ;
+  rdfs:domain <http://chapeaux.io/vocabulary/Asset> ;
+  rdfs:range xsd:integer .
+
+cpx:assetDescription
+  a rdf:Property ;
+  rdfs:domain <http://chapeaux.io/vocabulary/Asset> ;
+  rdfs:range <https://schema.org/Text> .
+
+cpx:Stylesheet rdfs:subClassOf cpx:Asset, <https://schema.org/SoftwareSourceCode> .
+cpx:Script rdfs:subClassOf cpx:Asset, <https://schema.org/SoftwareSourceCode> .
+cpx:Image rdfs:subClassOf cpx:Asset .
+cpx:WebComponent rdfs:subClassOf cpx:Asset, <https://schema.org/SoftwareSourceCode> .
+<http://chapeaux.io/vocabulary/pfeAccordion>
+  a cpx:WebComponent ;
+  cpx:assetDescription "Patternfly Elements Accordion" ;
+  cpx:sizeInBytes 8100 .
+
+<http://chapeaux.io/vocabulary/pfeAvatar>
+  a cpx:WebComponent ;
+  cpx:assetDescription "Patternfly Elements Avatar" ;
+  cpx:sizeInBytes 4100 .
+
+<http://chapeaux.io/vocabulary/AccessRHDC>
+  a cpx:Organization ;
+  cpx:owns <https://access.redhat.com/security/cve/cve-2021-3504> .
+
+<http://chapeaux.io/vocabulary/CatalogRHDC>
+  a cpx:Organization ;
+  cpx:owns <https://catalog.redhat.com/software/operators/detail/5e98726ac87154c17fb36531> .
+
+<http://chapeaux.io/vocabulary/DevelopersRHDC> a cpx:Organization .
+<http://chapeaux.io/vocabulary/RHDC> a cpx:Organization .
+<https://catalog.redhat.com/software/operators/detail/5e98726ac87154c17fb36531>
+  a <https://schema.org/WebPage> ;
+  cpx:contains <http://chapeaux.io/vocabulary/pfeAccordion>, <http://chapeaux.io/vocabulary/pfeAvatar> .
+
+<https://access.redhat.com/security/cve/cve-2021-3504>
+  a <https://schema.org/WebPage> ;
+  cpx:contains <http://chapeaux.io/vocabulary/pfeAccordion> .
+
+<https://chapeaux.io/npm/@chapeaux/cpx-query/cpx-query.js> a <https://www.w3.org/ns/iana/media-types/text/javascript#Resource> .

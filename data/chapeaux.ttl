@@ -1,4 +1,3 @@
-@base <http://chapeaux.io/vocabulary/> .
 @prefix schema: <https://schema.org/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -21,6 +20,7 @@ cpxs:hosts rdf:type rdf:Property ;
 cpxs:Namespace rdf:type rdfs:Class .
 cpxs:Organization rdf:type rdfs:Class .
 cpxs:Module rdf:type rdfs:Class .
+cpxs:Library rdf:type rdfs:Class .
 cpxs:Asset rdf:type rdfs:Class .
 
 cpxs:sizeInBytes rdf:type rdf:Property ;
@@ -40,11 +40,13 @@ cpxs:WebComponent rdfs:subClassOf cpxs:Asset ;
     rdfs:subClassOf schema:SoftwareSourceCode .
 
 cpx:pfeAccordion rdf:type cpxs:WebComponent ;
-    cpxs:assetDescription "Patternfly Elements Accordion" ;
+    cpxs:assetDescription "Patternfly Elements Accordion"@en ;
+    cpxs:assetDescription "Éléments de Patternfly Accordéon"@fr ;
     cpxs:sizeInBytes 8100 .
 
 cpx:pfeAvatar rdf:type cpxs:WebComponent ;
-    cpxs:assetDescription "Patternfly Elements Avatar" ;
+    cpxs:assetDescription "Patternfly Elements Avatar"@en ;
+    cpxs:assetDescription "Avatar d'éléments Patternfly"@fr ;
     cpxs:sizeInBytes 4100 .
 
 cpx:AccessRHDC rdf:type cpxs:Organization ;

@@ -1,0 +1,53 @@
+# https://tr.designtokens.org/format/
+# https://github.com/RedHat-UX/red-hat-design-tokens/tree/main/tokens
+
+@prefix ds: <https://chapeaux.io/design-system#> .
+@prefix rhds: <https://ux.redhat.com/schemas/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ds:Token rdf:type rdfs:Class .
+    
+ds:TokenExtension rdf:type rdf:Class .
+ds:TokenProperty rdf:type rdf:Property .
+ds:DesignTool rdf:type rdfs:Class .
+ds:TranslationTool rdf:type rdfs:Class .
+ds:DocumentationTool rdf:type rdfs:Class .
+ds:TokenType rdf:type rdfs:Class .
+ds:TokenGroup rdf:type rdfs:Class .
+ds:Alias rdf:type ds:Token .
+ds:CompositeToken rdf:type rdfs:Class .
+
+ds:value a ds:TokenProperty ;
+    rdfs:label "$value" ;
+    rdfs:comment "Token value" .
+ds:type a ds:TokenProperty ;
+    rdfs:label "$type" ;
+    rdfs:comment "Token type" .
+ds:description a ds:TokenProperty ;
+    rdfs:label "$description" ;
+    rdfs:comment "Token description" .
+ds:extensions a ds:TokenProperty ;
+    rdfs:label "$extensions" ;
+    rdfs:comment "Token extensions" .
+
+
+rhds:color rdf:type ds:TokenGroup ;
+    rdfs:label "" ;
+    ds:description """Color helps create consistent experiences across web properties. Various colors are
+        available in two themes, light and dark.""" ;
+    ds:type "color" ;
+    ds:extensions rhds:uxColorExtension .
+
+ds:uxExtension a ds:TokenExtension .
+    rdfs:label "com.redhat.ux" ;
+
+
+
+rhds:accent rdf:type ds:TokenGroup ;
+    rdfs:label "" ;
+    rdfs:comment """Accent colors""" ;
+    ds:extensions rhds:accentExtensions
+
+rhds:accentExtensions a ds:TokenExtension ;
+    rdfs:label "com.redhat.ux" .
